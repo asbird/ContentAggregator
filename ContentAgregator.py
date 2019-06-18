@@ -6,7 +6,7 @@ import webbrowser
 class Post:
     def __init__(self, title, link):
         self.title = title
-        self.link = title
+        self.link = link
 
 
 odpowiedz = requests.get("https://tim.blog/")
@@ -20,4 +20,4 @@ for x in mydivs:
     postLink = x.a.get('href')
     newestPosts.append(Post(postTitle, postLink))
 
-pdb.set_trace()
+webbrowser.open_new_tab(newestPosts[0].link)
